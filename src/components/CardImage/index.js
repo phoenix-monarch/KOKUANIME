@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { memo } from "react";
 
 const CardImage = ({ src, alt, className }) => (
-  <img src={src} alt={alt} width="100%" heigth="100%" className={className} />
+  <img src={src} alt={alt} width="100%" height="100%" className={className} />
 );
 
 CardImage.propTypes = {
