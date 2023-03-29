@@ -1,6 +1,6 @@
+import { Footer, Navbar } from "@/components";
 import Head from "next/head";
 import PropTypes from "prop-types";
-import { Navbar, Footer } from "@/components";
 
 const Layout = ({ children }) => (
   <>
