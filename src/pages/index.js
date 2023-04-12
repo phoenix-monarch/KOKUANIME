@@ -67,8 +67,8 @@ const Home = () => {
               <div className="mb-6 container">
                 <TitleSection>Updatetan Terbaru</TitleSection>
               </div>
-              <div className="container px-0 md:px-4">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 lg:gap-6">
+              <div className="container md:px-4">
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 lg:gap-6">
                   <For
                     each={anime}
                     render={(data, index) => (

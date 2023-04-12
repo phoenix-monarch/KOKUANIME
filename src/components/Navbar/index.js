@@ -1,11 +1,10 @@
 import Input from "@/components/Input";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { memo, useEffect, useState } from "react";
+import { memo, useState } from "react";
 
 const Navbar = () => {
   const router = useRouter();
-  const currentPath = router.asPath.split("/")[1];
   const [inputValue, setInputValue] = useState("");
 
   const searchFunc = (e) => setInputValue(e.target.value);
@@ -14,38 +13,6 @@ const Navbar = () => {
     if (inputValue.length === 0) return;
     router.push(`/search/${inputValue.split(" ").join("+")}`);
   };
-
-  useEffect(() => {
-    const navUl = document.querySelector("nav ul");
-    const searchInput = document.querySelector("form input.search-input");
-
-    const closeNavMenu = () => {
-      toggle.classList.remove("hamburger-active");
-      navUl.classList.remove("slide");
-
-      setTimeout(() => {
-        navUl.classList.remove("flex");
-        navUl.classList.add("hidden");
-      }, 100);
-    };
-
-    const searchInputKeypressFunc = (e) => {
-      if (e.key === "Enter") closeNavMenu();
-    };
-
-    const windowClickFunc = (e) => {
-      if (e.target !== navUl && e.target !== toggle && e.target !== searchInput)
-        closeNavMenu();
-    };
-
-    searchInput.addEventListener("keypress", searchInputKeypressFunc);
-    window.addEventListener("click", windowClickFunc);
-
-    return () => {
-      searchInput.removeEventListener("keypress", searchInputKeypressFunc);
-      window.removeEventListener("click", windowClickFunc);
-    };
-  }, []);
 
   return (
     <header>
