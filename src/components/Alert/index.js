@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { memo } from "react";
 
 const Alert = ({ message, bgcolor, textColor }) => (
@@ -14,11 +13,5 @@ const Alert = ({ message, bgcolor, textColor }) => (
     </div>
   </div>
 );
-
-Alert.propTypes = {
-  message: PropTypes.string.isRequired,
-  bgcolor: PropTypes.string,
-  textColor: PropTypes.string,
-};
 
 export default memo(Alert);

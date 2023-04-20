@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { memo } from "react";
 import { RenderIfTrue } from "../../utils";
 
@@ -22,12 +21,6 @@ const Description = ({ children, hasTitle, title }) => (
 
 Description.defaultProps = {
   title: "Ini Judul",
-};
-
-Description.propTypes = {
-  children: PropTypes.node,
-  hasTitle: PropTypes.bool,
-  title: PropTypes.string,
 };
 
 export default memo(Description);

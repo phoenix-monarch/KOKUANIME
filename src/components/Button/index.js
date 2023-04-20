@@ -1,5 +1,4 @@
 import { memo } from "react";
-import PropTypes from "prop-types";
 
 const Button = ({ children, onClick, bgcolor, width, circle, ...another }) => (
   <button
@@ -15,13 +14,6 @@ const Button = ({ children, onClick, bgcolor, width, circle, ...another }) => (
 
 Button.defaultProps = {
   bgcolor: "bg-slate-900",
-};
-
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func,
-  bgcolor: PropTypes.string,
-  width: PropTypes.string,
 };
 
 export default memo(Button);

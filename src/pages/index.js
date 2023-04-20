@@ -4,14 +4,19 @@ import Layout from "@/layout";
 import Recommendations from "@/section/Recommendations";
 import { For, RenderIfFalse, RenderIfTrue } from "@/utils";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const Home = () => {
+  const router = useRouter();
+  console.log(router);
+
   const [anime, setAnime] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   const getData = async () => {
-    const res = await getAnimeWithPagination();
+    const res = await getAnimeWithPagination(200);
 
     if (res.status === 200) {
       if (res.data.success !== false) {

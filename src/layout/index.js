@@ -1,6 +1,5 @@
 import { Footer, Navbar } from "@/components";
 import Head from "next/head";
-import PropTypes from "prop-types";
 
 const Layout = ({ children }) => (
   <>
@@ -20,9 +19,5 @@ const Layout = ({ children }) => (
     </div>
   </>
 );
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Layout;

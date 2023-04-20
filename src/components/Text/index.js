@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { memo } from "react";
 
 const Text = ({ children, category }) => (
@@ -9,10 +8,5 @@ const Text = ({ children, category }) => (
     <p className="inline">{children}</p>
   </div>
 );
-
-Text.propTypes = {
-  children: PropTypes.node,
-  category: PropTypes.string,
-};
 
 export default memo(Text);

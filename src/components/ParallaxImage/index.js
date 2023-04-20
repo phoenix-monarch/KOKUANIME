@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { memo } from "react";
 
 const ParallaxImage = ({ image, alt }) => (
@@ -10,10 +9,5 @@ const ParallaxImage = ({ image, alt }) => (
     />
   </div>
 );
-
-ParallaxImage.propTypes = {
-  image: PropTypes.string,
-  alt: PropTypes.string,
-};
 
 export default memo(ParallaxImage);

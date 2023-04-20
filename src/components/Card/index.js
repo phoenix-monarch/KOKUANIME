@@ -1,7 +1,6 @@
 import Link from "next/link";
-import PropTypes from "prop-types";
 import { memo } from "react";
-import { RenderIfTrue, RenderIfFalse } from "../../utils";
+import { RenderIfFalse, RenderIfTrue } from "../../utils";
 
 const Card = ({ path, children }) => (
   <div className="bg-cover bg-center h-full bg-no-repeat selection:bg-violet-500 rounded overflow-hidden bg-slate-700">
@@ -19,12 +18,5 @@ const Card = ({ path, children }) => (
     </div>
   </div>
 );
-
-Card.propTypes = {
-  children: PropTypes.node.isRequired,
-  bgimage: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
-  shadowColor: PropTypes.string,
-};
 
 export default memo(Card);

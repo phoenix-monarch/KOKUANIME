@@ -22,7 +22,7 @@ const DetailAnime = () => {
   const [detailAnime, setDetailAnime] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const getData = async (slug) => {
+  const getData = async slug => {
     const res = await getAnimeDetail(slug);
     if (res.status === 200) {
       if (res.data.success !== false) {
@@ -99,20 +99,16 @@ const DetailAnime = () => {
                             <Text category="Genre">
                               <For
                                 each={detailAnime?.genre}
-                                render={(genre, index) => {
+                                render={({ endpoint, name }, index) => {
                                   const coma =
                                     detailAnime?.genre.length - 1 === index
                                       ? ""
                                       : ", ";
+
                                   return (
-                                    <Link
-                                      href={`/${genre.endpoint}`}
-                                      key={index}
-                                      passHref
-                                    >
+                                    <Link href={`/${endpoint}`} key={index}>
                                       <a className="hover:text-pink-500 transition-colors duration-300">
-                                        {genre.name}
-                                        {coma}
+                                        {`${name}${coma}`}
                                       </a>
                                     </Link>
                                   );
@@ -129,10 +125,10 @@ const DetailAnime = () => {
                                     detailAnime?.producers.length - 1 === index
                                       ? ""
                                       : ", ";
+
                                   return (
                                     <span key={index}>
-                                      {producer}
-                                      {coma}
+                                      {`${producer}${coma}`}
                                     </span>
                                   );
                                 }}
@@ -143,10 +139,7 @@ const DetailAnime = () => {
                             <Text category="Type">{detailAnime?.type}</Text>
                           </RenderIfTrue>
                           <RenderIfTrue isTrue={detailAnime?.status}>
-                            <Text category="Status">
-                              {" "}
-                              {detailAnime?.status}
-                            </Text>
+                            <Text category="Status">{detailAnime?.status}</Text>
                           </RenderIfTrue>
                         </div>
                       </div>
@@ -179,17 +172,13 @@ const DetailAnime = () => {
                                 render={(data, index) => (
                                   <div key={index} className="my-4">
                                     <p className="bg-sky-600 rounded p-2 my-3 text-center text-base md:text-lg selection:bg-violet-700 selection:text-violet-100">
-                                      Resolusi : {data?.resolusi}
+                                      {`Resolusi : ${data?.resolusi}`}
                                     </p>
                                     <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 lg:gap-4">
                                       <For
                                         each={data?.link_download}
                                         render={(data, index) => (
-                                          <Link
-                                            key={index}
-                                            href={data?.link}
-                                            passHref
-                                          >
+                                          <Link key={index} href={data?.link}>
                                             <a target="_blank">
                                               <Button
                                                 width="w-full"

@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { memo } from "react";
 
 const TitleSection = ({ children, centerText }) => (
@@ -10,10 +9,5 @@ const TitleSection = ({ children, centerText }) => (
     {children}
   </h1>
 );
-
-TitleSection.propTypes = {
-  centerText: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-};
 
 export default memo(TitleSection);

@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { memo } from "react";
 import CardImage from "../CardImage";
 
@@ -13,10 +12,5 @@ const ParallaxCardImage = ({ image, alt }) => (
     />
   </div>
 );
-
-ParallaxCardImage.propTypes = {
-  image: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-};
 
 export default memo(ParallaxCardImage);

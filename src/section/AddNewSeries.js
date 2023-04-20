@@ -16,7 +16,7 @@ const AddNewSeries = () => {
     if (res.status === 200) {
       if (res.data.success !== false) {
         const dataAnime = res.data.filter(
-          (data) => data?.link?.endpoint.split("/")[0] !== slug
+          data => data?.link?.endpoint.split("/")[0] !== slug
         );
         setAnime(dataAnime);
         setIsLoading(false);

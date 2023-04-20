@@ -1,5 +1,4 @@
-import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const RenderAfter = ({ delay, children }) => {
   const [onReady, setOnReady] = useState(false);
@@ -10,11 +9,6 @@ const RenderAfter = ({ delay, children }) => {
   }, []);
 
   return onReady ? children : null;
-};
-
-RenderAfter.propTypes = {
-  delay: PropTypes.number.isRequired,
-  children: PropTypes.node,
 };
 
 export default RenderAfter;

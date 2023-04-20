@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 const Recommendations = () => {
   const router = useRouter();
   const { slug } = router.query;
+
   const [anime, setAnime] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,7 +20,7 @@ const Recommendations = () => {
         const dataAnime = !slug
           ? res.data
           : res.data.filter(
-              (data) => data?.link?.endpoint.split("/")[0] !== slug
+              data => data?.link?.endpoint.split("/")[0] !== slug
             );
         setAnime(dataAnime);
         setIsLoading(false);

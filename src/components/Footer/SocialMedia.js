@@ -8,7 +8,7 @@ const SocialMedia = [
   },
   {
     sosmedName: "Instagram",
-    sosmedPath: "https://instagram.com/kochan.php",
+    sosmedPath: "https://instagram.com/kochan4php",
     sosmedIcon: <BsInstagram />,
   },
   {

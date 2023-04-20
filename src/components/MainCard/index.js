@@ -16,14 +16,4 @@ const MainCard = ({ image, title, path, px, py, fontsize, centerText }) => (
   </Card>
 );
 
-MainCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
-  title: PropTypes.string,
-  px: PropTypes.string,
-  py: PropTypes.string,
-  fontsize: PropTypes.string,
-  centerText: PropTypes.bool,
-};
-
 export default memo(MainCard);

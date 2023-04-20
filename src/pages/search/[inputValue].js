@@ -14,7 +14,7 @@ const SearchAnime = () => {
   const [anime, setAnime] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getData = async (keyword) => {
+  const getData = async keyword => {
     const res = await getAnimeSearch(keyword);
     if (res.status === 200) {
       if (res.data.success !== false) {
@@ -61,11 +61,11 @@ const SearchAnime = () => {
             </div>
           </RenderIfTrue>
           <RenderIfFalse isFalse={anime.length > 0}>
-            <RenderAfter delay={1500}>
+            <RenderAfter delay={1000}>
               <Alert
                 bgcolor="bg-warning"
                 textColor="text-dark"
-                message={`Anime dengan judul ${input?.toUpperCase()} tidak ada.`}
+                message={`Anime dengan judul ${input} tidak ada.`}
               />
             </RenderAfter>
           </RenderIfFalse>
